@@ -1,0 +1,55 @@
+MixedLM cross-check (PR ~ MA + hyperparameter, random intercept per source_dir)
+final_budget_only, non-failed rows. Corroboration only -- see summary/ for the
+primary per-dir + meta-analysis results.
+======================================================================
+
+[weight_decay]
+               Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept      0.034    0.016   2.136  0.033   0.003   0.064
+MA             0.179    0.014  13.154  0.000   0.153   0.206
+weight_decay  -0.295    0.091  -3.237  0.001  -0.473  -0.116
+Group Var      0.003    0.014                               
+
+[batch_size]
+             Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept    0.046    0.017   2.622  0.009   0.012   0.080
+MA           0.198    0.014  14.651  0.000   0.172   0.225
+batch_size  -0.000    0.000  -3.806  0.000  -0.001  -0.000
+Group Var    0.003    0.017                               
+
+[optimizer]
+                                        Coef. Std.Err.       z  P>|z|  [0.025 0.975]
+Intercept                               0.014    0.017   0.817  0.414  -0.019  0.047
+C(optimizer, Treatment('Adam'))[T.SGD]  0.021    0.005   4.560  0.000   0.012  0.030
+MA                                      0.197    0.013  14.696  0.000   0.171  0.223
+Group Var                               0.003    0.017                              
+
+[loss]
+                                              Coef. Std.Err.       z  P>|z|  [0.025 0.975]
+Intercept                                     0.025    0.016   1.535  0.125  -0.007  0.056
+C(loss, Treatment('Focal'))[T.CrossEntropy]  -0.000    0.004  -0.006  0.996  -0.008  0.008
+MA                                            0.189    0.013  14.158  0.000   0.163  0.216
+Group Var                                     0.003    0.016                              
+
+[head]
+                                            Coef. Std.Err.       z  P>|z|  [0.025 0.975]
+Intercept                                  -0.013    0.017  -0.766  0.444  -0.045  0.020
+C(head, Treatment('ArcFace'))[T.Baseline]  -0.005    0.007  -0.679  0.497  -0.019  0.009
+C(head, Treatment('ArcFace'))[T.CosFace]    0.108    0.006  17.844  0.000   0.096  0.120
+C(head, Treatment('ArcFace'))[T.Linear]     0.053    0.008   6.991  0.000   0.038  0.068
+MA                                          0.186    0.014  13.172  0.000   0.158  0.214
+Group Var                                   0.003    0.020                              
+
+[lr | Adam]
+            Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept   0.072    0.015   4.770  0.000   0.042   0.101
+MA          0.124    0.014   8.620  0.000   0.095   0.152
+lr         -4.786    0.977  -4.899  0.000  -6.700  -2.871
+Group Var   0.002    0.013                               
+
+[lr | SGD]
+            Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept   0.019    0.029   0.678  0.498  -0.037   0.075
+MA          0.268    0.026  10.151  0.000   0.216   0.319
+lr         -0.083    0.021  -3.905  0.000  -0.124  -0.041
+Group Var   0.009    0.046                               

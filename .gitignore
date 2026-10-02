@@ -1,0 +1,21 @@
+# OS / editor cruft
+.DS_Store
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Paper draft (not part of the code release)
+SATML_2027.pdf
+
+# Large experiment outputs / generated results (regenerable from the scripts in this
+# repo, not source -- see README for how to produce them)
+multiHPO_results/
+singleHPO_results/
+pareto/final_plots/
+pareto/Plotsv4_noCI/
+pareto/hpo_analysis/plots/
+pareto/hpo_analysis/report.html
+pareto/hpo_analysis/wearinghat_check/

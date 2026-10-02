@@ -1,0 +1,29 @@
+# Core
+torch==2.8.0
+torchvision==0.23.0
+numpy==2.0.2
+pandas==2.3.3
+scipy==1.13.1
+Pillow==11.3.0
+matplotlib==3.9.4
+tqdm==4.67.1
+
+# Hyperparameter optimization (multi-objective + multi-fidelity M-HPO)
+smac>=2.0
+ConfigSpace>=0.7
+
+# Classical ML / metrics / statistical analysis
+scikit-learn>=1.3
+scikit-image>=0.21
+
+# Face alignment / image I/O used by util/extract_feature_v2.py
+opencv-python>=4.8
+
+# Experiment tracking and logging
+wandb>=0.15
+tensorboardX>=2.6
+
+# Note: the versions above without an exact pin (>=) were not available in the
+# environment this repo was cleaned up in, so only a minimum compatible version is
+# given here. For an exact reproduction of the paper's results, capture a
+# `pip freeze` from the actual training environment and use that to pin them.
